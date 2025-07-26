@@ -291,3 +291,47 @@ By locating each institution’s position, we can:
 
 ```
 ![selection](./datavisual/si&wrScored.png)
+
+## 🔥 Social Impact vs. World Ranking — Heatmap of Top 50 Universities
+
+This final visualization offers a focused look into the **intricate relationship between Social Impact (SI) and World Ranking (WR)** for the top 50 universities. The **color intensity** in this heatmap directly reflects the score, with **darker shades indicating higher performance**.
+
+---
+
+### 📌 Key Insights
+
+#### 🌟 Dual Excellence
+Top institutions like **University of Oxford**, **University Gadjah Mada**, **Khon Kaen University**, and **University of Brasilia** stand out with **high scores in both SI and WR**.  
+> These universities are global **impact leaders**, combining academic excellence with strong societal contributions.
+
+---
+
+#### 📈 Correlated Strength
+A **positive correlation** is generally observed:  
+> Universities with higher **World Ranking (WR)** tend to also achieve **higher Social Impact (SI)** scores.
+
+This reflects how **global recognition** often accompanies **deep community engagement** and societal value.
+
+---
+
+#### ⚖️ Diverse Strategic Profiles
+Not all institutions follow the same trajectory:
+
+- Some show **strong SI scores** despite modest WR positions.
+- Others excel in WR while showing **room to grow** in their social footprint.
+
+> This diversity reveals different **institutional strategies**, regional priorities, and impact pathways.
+
+---
+
+### 🎯 Strategic Implications
+
+- For policymakers and educators:  
+  This heatmap helps **identify universities** that successfully **balance global prestige** with **local and regional relevance**.
+
+- For the **UI GreenMetric** initiative:  
+  The visualization offers insights into how **sustainability and societal engagement** efforts align with and **enhance global academic standing**.
+
+---
+
+
