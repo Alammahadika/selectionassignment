@@ -19,9 +19,9 @@ This assignment focuses on analyzing data from **100 universities from various c
 
 The main objective of this assignment is to analyze this data to understand the **competitive position and academic strength** of the universities.
 
-## Visual Analysis: University Performance by Region (Radar Charts)
+##  University Performance by Region (Radar Charts)
 
-```py
+```r
 data_asia <- data.frame(
    row.names = c("University of Gadjah Mada", "University of Sabanci", "University of Khon Kaen", "University of Indonesia", "University of Marmara", 
                  "University of Uskudar", "University of Sarakrya", "University of NTU", "University of Arab Open", "University of Brawijaya"),
@@ -128,6 +128,49 @@ The charts suggest that **strategic investment** in **research, visibility, and 
 
 ---
 
+## Mapping University Competitive Positions
 
+```r
+library(ggplot2)
+ library(dplyr)
+ library(tidyr)
+ library(forcats)
+ library(ggrepel)
+ 
 
+ data <- data_univ %>%
+   mutate(
+     Competitive_Edge = (`Score EC` + `Score WS`) / 2,  # Daya saing
+     Academic_Strength = (`Score TR` + `Score ED`) / 2   # Kekuatan akademik
+   )
+
+ data <- data %>%
+   mutate(
+     Competitive_Edge_Scaled = Competitive_Edge / 100,
+     Academic_Strength_Scaled = Academic_Strength / 100
+   )
+
+ ggplot(data = data, aes(x = Competitive_Edge_Scaled, y = Academic_Strength_Scaled)) +
+   # Menggunakan Competitive_Edge_Scaled dan Academic_Strength_Scaled
+   geom_point(aes(color = Region), size = 1.5, alpha = 0.7) +
+   
+   geom_text_repel(aes(label = `University Name`), size = 3) +
+   
+   labs(title = "Competitive Positioning of Universities",
+        x = "Competitive Edge (Employability & Reputation)",
+        y = "Academic Strength (Teaching & Education)") +
+   
+
+   scale_color_discrete(name = NULL) +
+   
+   scale_x_continuous(breaks = c(5, 7, 10, 12, 15, 18), # Sesuaikan dengan rentang data setelah dibagi 100
+                      labels = c("5", "7", "10", "12", "15", "18")) + # Sesuai dengan breaks
+   
+
+   scale_y_continuous(breaks = c(5, 7, 10, 12, 15), # Sesuaikan dengan rentang data setelah dibagi 100
+                      labels = c("5", "7", "10", "12", "15")) +
+   
+   theme_minimal()
+
+```
 
