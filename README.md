@@ -18,3 +18,6 @@ This assignment focuses on analyzing data from **100 universities from various c
 * **Score SI**: **Social Impact** — The university's social contributions to society, such as community service activities, local collaborations, inclusiveness, the social impact of research, and its role in sustainable development.
 
 The main objective of this assignment is to analyze this data to understand the **competitive position and academic strength** of the universities.
+
+## Visual Analysis: University Performance by Region (Radar Charts)
+
