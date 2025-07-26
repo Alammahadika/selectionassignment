@@ -236,4 +236,58 @@ By locating each institution’s position, we can:
 
 ---
 
+## Deep Dive: Social Impact vs. Global Ranking (Top 50 Universities)
 
+```r
+ library(ggplot2)
+ library(dplyr)
+ library(tidyr)
+ library(forcats) # Untuk fct_reorder
+ 
+ long_data_universities <- data_univ %>%
+   select(`University Name`, `Score SI`, `Score WR`)
+ 
+ long_data_universities <- long_data_universities %>%
+   rowwise() %>%
+   mutate(Avg_Overall_Score = mean(c(`Score SI`, `Score WR`), na.rm = TRUE)) %>%
+   ungroup() %>%
+   arrange(desc(Avg_Overall_Score)) # Tetap urutkan descending di sini agar head() memilih yang teratas
+ 
+ top_50_universities <- long_data_universities %>%
+   head(50)
+ 
+ long_data_top_50 <- top_50_universities %>%
+   pivot_longer(
+     cols = c(`Score SI`, `Score WR`),
+     names_to = "Indicator",
+     values_to = "Score"
+   )
+ 
+ long_data_top_50$Indicator <- factor(long_data_top_50$Indicator,
+                                      levels = c("Score SI", "Score WR"),
+                                      labels = c("Score SI", "Score WR"))
+ 
+ long_data_top_50$`University Name` <- factor(long_data_top_50$`University Name`,
+                                              levels = rev(unique(top_50_universities$`University Name`)))
+
+ p_top_50_reversed <- ggplot(long_data_top_50, aes(x = Indicator, y = `University Name`, fill = Score)) +
+   geom_tile(color = "white", linewidth = 0.5) +
+   scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Score") +
+   geom_text(aes(label = round(Score, 0)), color = "black", size = 0) +
+   labs(
+     title = "SI and WR Scores for Top 50 Universities (Reverse Order)", 
+     x = "Indicator",
+     y = "Universities"
+   ) +
+   theme_minimal() +
+   theme(
+     axis.text.x = element_text(angle = 45, hjust = 1),
+     axis.text.y = element_text(size = 8),
+     plot.title = element_text(hjust = 0.5),
+     legend.position = "right"
+   )
+ 
+ print(p_top_50_reversed)
+
+```
+![selection](./datavisual/si&wrScored.png)
