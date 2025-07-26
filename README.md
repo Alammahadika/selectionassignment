@@ -174,3 +174,4 @@ library(ggplot2)
 
 ```
 
+![selection](./datavisual/Competitive_Position_Universities.png)
