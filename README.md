@@ -71,3 +71,6 @@ data_asia <- data.frame(
  make_radar(data_africa, "Africa")
 
 ```
+
+
+![selestion](./datavisual/Data_Visual_Radar.png)
