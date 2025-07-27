@@ -1,4 +1,4 @@
-# Selection Assignment - Data Analysis and Development Specialist 
+# [Selection Assignment - Data Analysis and Development Specialist](https://www.instagram.com/p/DMNDMHvTVVs/)
 
 Welcome to this repository!
 
@@ -140,8 +140,8 @@ library(ggplot2)
 
  data <- data_univ %>%
    mutate(
-     Competitive_Edge = (`Score EC` + `Score WS`) / 2,  # Daya saing
-     Academic_Strength = (`Score TR` + `Score ED`) / 2   # Kekuatan akademik
+     Competitive_Edge = (`Score EC` + `Score WS`) / 2,  # Compeitive
+     Academic_Strength = (`Score TR` + `Score ED`) / 2   # Academic Strenght
    )
 
  data <- data %>%
@@ -163,11 +163,11 @@ library(ggplot2)
 
    scale_color_discrete(name = NULL) +
    
-   scale_x_continuous(breaks = c(5, 7, 10, 12, 15, 18), # Sesuaikan dengan rentang data setelah dibagi 100
-                      labels = c("5", "7", "10", "12", "15", "18")) + # Sesuai dengan breaks
+   scale_x_continuous(breaks = c(5, 7, 10, 12, 15, 18),  
+                      labels = c("5", "7", "10", "12", "15", "18")) + 
    
 
-   scale_y_continuous(breaks = c(5, 7, 10, 12, 15), # Sesuaikan dengan rentang data setelah dibagi 100
+   scale_y_continuous(breaks = c(5, 7, 10, 12, 15),
                       labels = c("5", "7", "10", "12", "15")) +
    
    theme_minimal()
@@ -242,7 +242,7 @@ By locating each institution’s position, we can:
  library(ggplot2)
  library(dplyr)
  library(tidyr)
- library(forcats) # Untuk fct_reorder
+ library(forcats) 
  
  long_data_universities <- data_univ %>%
    select(`University Name`, `Score SI`, `Score WR`)
@@ -251,7 +251,7 @@ By locating each institution’s position, we can:
    rowwise() %>%
    mutate(Avg_Overall_Score = mean(c(`Score SI`, `Score WR`), na.rm = TRUE)) %>%
    ungroup() %>%
-   arrange(desc(Avg_Overall_Score)) # Tetap urutkan descending di sini agar head() memilih yang teratas
+   arrange(desc(Avg_Overall_Score)) 
  
  top_50_universities <- long_data_universities %>%
    head(50)
