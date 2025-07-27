@@ -2,7 +2,7 @@
 
 Welcome to this repository!
 
-This repository contains the solutions and analyses I developed as part of the selection assignment for the **Data Analysis and Development Specialist** position at the **University of Indonesia UI GreenMetric**.
+This repository contains the solutions and analyses I developed as part of the selection assignment for the **Data Analysis and Development Specialist** position at the [**University of Indonesia UI GreenMetric**](https://greenmetric.ui.ac.id).
 
 I am very enthusiastic about this opportunity and have put in my best effort in analyzing the university data and sustainability indicators provided, and identifying relevant insights.
 
